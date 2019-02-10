@@ -107,3 +107,11 @@ main {
 	color: #ff2e88;
 	border-bottom: 1px dotted LightGrey;
 }
+
+@media only screen and (max-width: [660px]) {
+	main {
+		display: block;
+		float: left;
+		padding: 0 14px;
+	}
+}
