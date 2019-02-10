@@ -7,13 +7,13 @@ body {
 	font-family: 'Anonymous Pro', monospace;
 	font-size: 12px !important;
 	background-color: #fdf6e3;
-	margin: 20px 10% 20px 10%;
+	margin: 20px 10%;
 	line-height:1.5rem;
 	word-wrap: break-word;
 }
 
 nav {
-	display: block;
+	display: inline-block;
 	float: left;
 }
 
@@ -74,6 +74,18 @@ nav {
 	margin: 2px;
 }
 
+main {
+	display: flex;
+	padding: 0 14px;
+	border-left: 1px dotted LightGrey;
+}
+
+.navigation {
+	display: block;
+	padding: 10px 10px;
+	clear: left;
+}
+
 .navigation a {
 	cursor: pointer;
 	color: #ff2e88;
@@ -83,18 +95,6 @@ nav {
 .navigation a:hover{
 	background-color:#ff2e88;
 	color:#fdf6e3
-}
-
-.navigation {
-	display: block;
-	padding: 10px 10px;
-	clear: left;
-}
-
-main {
-	display: flex;
-	padding: 0 14px;
-	border-left: 1px dotted LightGrey;
 }
 
 .content {
@@ -108,10 +108,19 @@ main {
 	border-bottom: 1px dotted LightGrey;
 }
 
-@media only screen and (max-width: [660px]) {
+@media only screen and (max-width: 768px) {
+	.header h1.title {
+		font-size: 22px;
+	}
+
+	.header img.title {
+		width: 80px;
+	}
+
 	main {
 		display: block;
 		float: left;
 		padding: 0 14px;
+		border-left: 0;
 	}
 }
