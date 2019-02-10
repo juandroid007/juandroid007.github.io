@@ -1,15 +1,20 @@
+* {
+	box-sizing: border-box;
+	text-rendering: geometricPrecision;
+}
+
 body {
 	font-family: 'Anonymous Pro', monospace;
 	font-size: 12px !important;
 	background-color: #fdf6e3;
-	margin: 20px 20px 10% 10%;
+	margin: 20px 10% 20px 10%;
+	line-height:1.5rem;
 	word-wrap: break-word;
 }
 
 nav {
 	display: block;
 	float: left;
-
 }
 
 .header {
@@ -17,6 +22,7 @@ nav {
 }
 
 .header h1.title {
+	display:flex;
 	color: DarkGrey;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -24,7 +30,7 @@ nav {
 	float: left;
 }
 
-.header img {
+.header img.title {
 	/*Disable interpolation*/
 	image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
 	image-rendering: -moz-crisp-edges;          /* Firefox                        */
@@ -87,8 +93,7 @@ nav {
 
 main {
 	display: flex;
-	padding: 14px;
-	-ms-flex: 0 0 80%;
+	padding: 0 14px;
 	border-left: 1px dotted LightGrey;
 }
 
@@ -99,13 +104,6 @@ main {
 .content .directory {
 	font-size: 12px;
 	padding-bottom: 1em;
-	color: DarkGrey;
-}
-
-.byline {
-	border-bottom: 1px solid LightGrey;
-	border-top: 1px solid LightGrey;
-	color: DarkGrey;
-	font-size: 14px;
-	font-style: bold;
+	color: #ff2e88;
+	border-bottom: 1px dotted LightGrey;
 }
