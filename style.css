@@ -1,3 +1,12 @@
+::selection {
+	color: #fdf6e3;
+	background: #ff2e88; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	color: #fdf6e3;
+	background: #ff2e88; /* Gecko Browsers */
+}
+
 * {
 	box-sizing: border-box;
 	text-rendering: geometricPrecision;
@@ -8,7 +17,7 @@ body {
 	font-size: 12px !important;
 	background-color: #fdf6e3;
 	margin: 20px 15%;
-	line-height:1.5rem;
+	line-height: 1.5rem;
 	word-wrap: break-word;
 }
 
@@ -66,7 +75,7 @@ nav {
 	background: url(assets/github.svg);
 	background-size: 20px 20px;
 	text-indent: -99px;
-	margin: 2px;
+	margin: 0.3em;
 }
 
 .icons .youtube-icon {
@@ -76,7 +85,7 @@ nav {
 	background: url(assets/youtube.svg);
 	background-size: 20px 20px;
 	text-indent: -99px;
-	margin: 2px;
+	margin: 0.3em;
 }
 
 main {
@@ -102,8 +111,8 @@ main {
 }
 
 .navigation a:hover span{
-	background-color:#ff2e88;
-	color:#fdf6e3
+	background-color: #ff2e88;
+	color: #fdf6e3
 }
 
 .directory {
