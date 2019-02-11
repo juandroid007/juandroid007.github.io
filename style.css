@@ -21,7 +21,17 @@ body {
 	word-wrap: break-word;
 }
 
-img {
+li {
+	list-style-type: none;
+}
+
+li:before {
+	display: inline-block;
+	content: "—";
+	width: 4ch;
+}
+
+.pixelated {
 	/*Disable interpolation*/
 	image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
 	image-rendering: -moz-crisp-edges;          /* Firefox                        */
@@ -56,6 +66,15 @@ nav {
 }
 
 .header img.title {
+	/*Disable interpolation*/
+	image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+	image-rendering: -moz-crisp-edges;          /* Firefox                        */
+	image-rendering: -o-crisp-edges;            /* Opera                          */
+	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+	image-rendering: pixelated; /* Chrome */
+	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE8+*/
+
 	/*Drop shadow*/
 	-webkit-filter: drop-shadow(1px 1px 1px #808080);
 	filter: drop-shadow(1px 1px 1px #808080);
@@ -132,7 +151,23 @@ main {
 	width: 100%;
 }
 
-.content .image-container {
+.content a {
+	display: inline-block;
+	outline: 0;
+	color: #ff2e88;
+}
+
+.content a:hover {
+	display: inline;
+	background-color: #ff2e88;
+	color: #fdf6e3
+}
+
+.content .articles-list a {
+	text-decoration: none;
+}
+
+.content .image-container, .video-container {
 	display: table;
 	margin: 0 auto;
 }
@@ -143,6 +178,32 @@ main {
 	max-width: 100%;
 	height: auto;
 	padding: 8px;
+}
+
+.content .video-container iframe {
+	-webkit-filter: drop-shadow(1px 1px 1px #808080);
+	filter: drop-shadow(1px 1px 1px #808080);
+	max-width: 100%;
+}
+
+.content .img-caption {
+	border-radius: 10px;
+	background-color: rgba(169, 169, 169, 0.4);
+	font-style: italic;
+	text-align: center;
+}
+
+.content .img-caption p {
+	margin-top: 0;
+}
+
+.content hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px dotted LightGrey;
+	margin: 1em 0;
+	padding: 0;
 }
 
 @media only screen and (max-width: 768px) {
