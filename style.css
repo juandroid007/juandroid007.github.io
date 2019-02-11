@@ -7,7 +7,7 @@ body {
 	font-family: 'Anonymous Pro', monospace;
 	font-size: 12px !important;
 	background-color: #fdf6e3;
-	margin: 20px 10%;
+	margin: 20px 15%;
 	line-height:1.5rem;
 	word-wrap: break-word;
 }
@@ -39,6 +39,11 @@ nav {
 	padding-right: 10px;
 	font-size: 18px;
 	float: left;
+}
+
+.header a {
+	cursor: default;
+	outline: 0;
 }
 
 .header img.title {
@@ -118,7 +123,24 @@ main {
 	width: 100%;
 }
 
+.content .image-container {
+	display: table;
+	margin: 0 auto;
+}
+
+.content img {
+	-webkit-filter: drop-shadow(1px 1px 1px #808080);
+	filter: drop-shadow(1px 1px 1px #808080);
+	max-width: 100%;
+	height: auto;
+	padding: 8px;
+}
+
 @media only screen and (max-width: 768px) {
+	body {
+		margin: 20px 10%;
+	}
+
 	nav {
 		float: none;
 		margin: 0 auto;
