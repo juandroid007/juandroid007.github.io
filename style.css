@@ -12,8 +12,19 @@ body {
 	word-wrap: break-word;
 }
 
+img {
+	/*Disable interpolation*/
+	image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+	image-rendering: -moz-crisp-edges;          /* Firefox                        */
+	image-rendering: -o-crisp-edges;            /* Opera                          */
+	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+	image-rendering: pixelated; /* Chrome */
+	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE8+*/
+}
+
 nav {
-	display: inline-block;
+	display: table;
 	float: left;
 }
 
@@ -26,25 +37,16 @@ nav {
 	color: DarkGrey;
 	padding-left: 10px;
 	padding-right: 10px;
-	font-size: 24px;
+	font-size: 18px;
 	float: left;
 }
 
 .header img.title {
-	/*Disable interpolation*/
-	image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-	image-rendering: -moz-crisp-edges;          /* Firefox                        */
-	image-rendering: -o-crisp-edges;            /* Opera                          */
-	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-	image-rendering: pixelated; /* Chrome */
-	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-	-ms-interpolation-mode: nearest-neighbor;   /* IE8+*/
-
 	/*Drop shadow*/
 	-webkit-filter: drop-shadow(1px 1px 1px #808080);
 	filter: drop-shadow(1px 1px 1px #808080);
 	float: left;
-	width: 100px;
+	width: 70px;
 }
 
 .icons {
@@ -74,18 +76,20 @@ nav {
 
 main {
 	display: flex;
+	flex-wrap: wrap;
 	padding-left: 14px;
 	border-left: 1px dotted LightGrey;
 }
 
 .navigation {
-	display: block;
-	padding: 10px 10px;
+	display: table;
+	padding: 10px 14px;
 	clear: left;
 }
 
 .navigation a {
 	display: inline-block;
+	outline: 0;
 	cursor: pointer;
 	color: #ff2e88;
 	margin-left: 4ch;
@@ -97,23 +101,26 @@ main {
 	color:#fdf6e3
 }
 
-.content {
+.directory {
 	display: block;
-}
-
-.content .directory {
-	display: block;
+	float: left;
+	width: 100%;
 	border-bottom: 1px dotted LightGrey;
 }
 
-.content .directory p {
-	font-size: 12px;
+.directory p {
 	color: #ff2e88;
+}
+
+.content {
+	display: block;
+	float: left;
+	width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
 	nav {
-		display: table;
+		float: none;
 		margin: 0 auto;
 	}
 
@@ -125,8 +132,23 @@ main {
 		width: 70px;
 	}
 
+	.navigation {
+		margin: 0 auto;
+	}
+
 	main {
+		display: block;
 		width: 100%;
 		border-left: 0;
+	}
+}
+
+@media only screen and (max-width: 304px) {
+	.header h1.title {
+		font-size: 16px;
+	}
+
+	.header img.title {
+		width: 60px;
 	}
 }
